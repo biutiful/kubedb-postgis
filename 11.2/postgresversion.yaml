@@ -1,0 +1,16 @@
+---
+apiVersion: catalog.kubedb.com/v1alpha1
+kind: PostgresVersion
+metadata:
+  name: postgis-11.2
+spec:
+  version: "11.2"
+  db:
+    image: biutiful/kubedb-postgis:11.2
+  exporter:
+    image: kubedb/postgres_exporter:v0.4.7
+  tools:
+    image: kubedb/postgres-tools:11.2
+  podSecurityPolicies:
+    databasePolicyName: "postgres-db"
+    snapshotterPolicyName: "postgres-snapshot"     
